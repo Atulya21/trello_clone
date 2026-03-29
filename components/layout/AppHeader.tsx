@@ -13,11 +13,11 @@ const navPill =
 export function AppHeader({ boardTitle }: AppHeaderProps) {
   return (
     <header
-      className="relative flex items-center min-h-12 px-3 sm:px-4 shrink-0 gap-2"
+      className="grid grid-cols-[1fr_auto_1fr] items-center min-h-12 px-3 sm:px-4 shrink-0 gap-2"
       style={{ backgroundColor: "rgba(0, 0, 0, 0.28)", backdropFilter: "blur(6px)" }}
     >
       {/* Left: Logo + nav */}
-      <div className="flex items-center gap-1 min-w-0 flex-1">
+      <div className="flex items-center gap-1 min-w-0 justify-self-start">
         <button
           type="button"
           className={`${navPill} gap-2`}
@@ -43,13 +43,13 @@ export function AppHeader({ boardTitle }: AppHeaderProps) {
         </button>
       </div>
 
-      {/* Center: board title (viewport-centered like Trello) */}
-      <h2 className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 max-w-[min(280px,40vw)] text-center text-white font-semibold text-[15px] leading-snug tracking-tight truncate pointer-events-none">
+      {/* Center: board title */}
+      <h2 className="justify-self-center max-w-[min(280px,36vw)] text-center text-white font-semibold text-[15px] leading-snug tracking-tight truncate px-1">
         {boardTitle}
       </h2>
 
       {/* Right: actions */}
-      <div className="flex items-center justify-end gap-1 flex-1 min-w-0">
+      <div className="flex items-center justify-end gap-1 min-w-0 justify-self-end">
         <button
           type="button"
           className="inline-flex items-center justify-center size-8 rounded-md bg-white/20 text-white hover:bg-white/30 active:bg-white/25 transition-colors duration-200 ease-out"
