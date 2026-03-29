@@ -28,7 +28,7 @@ export function AddListForm({ onAdd, onCancel }: AddListFormProps) {
   };
 
   return (
-    <div className="bg-[#f1f2f4] rounded-xl p-2 w-[272px] shrink-0 shadow-list">
+    <div className="bg-[#ebecf0] rounded-xl p-2 w-[272px] shrink-0 shadow-list">
       <input
         ref={ref}
         value={title}

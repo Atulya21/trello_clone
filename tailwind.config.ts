@@ -20,9 +20,12 @@ const config: Config = {
         },
       },
       boxShadow: {
-        card: "0 1px 0 rgba(9,30,66,.25)",
-        "card-hover": "0 8px 16px -4px rgba(9,30,66,.25), 0 0 0 1px rgba(9,30,66,.08)",
-        list: "0 1px 2px rgba(9,30,66,.25)",
+        card:
+          "0 1px 0 rgba(9, 30, 66, 0.25), 0 0 0 1px rgba(9, 30, 66, 0.04)",
+        "card-hover":
+          "0 4px 12px rgba(9, 30, 66, 0.12), 0 1px 3px rgba(9, 30, 66, 0.14), 0 0 0 1px rgba(9, 30, 66, 0.06)",
+        list:
+          "0 1px 0 rgba(9, 30, 66, 0.2), 0 1px 3px rgba(9, 30, 66, 0.08), 0 2px 8px rgba(9, 30, 66, 0.04), inset 0 0 0 1px rgba(9, 30, 66, 0.06)",
         modal: "0 8px 40px rgba(9,30,66,.35)",
       },
     },

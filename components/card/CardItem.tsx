@@ -51,8 +51,9 @@ export function CardItem({ card, onOpen }: CardItemProps) {
       {...attributes}
       {...listeners}
       className={`group relative bg-white rounded-lg shadow-card hover:shadow-card-hover
-        cursor-pointer transition-all duration-150 select-none
-        ${isDragging ? "opacity-50 rotate-2 scale-105 shadow-xl" : ""}
+        cursor-pointer transition-[transform,box-shadow] duration-200 ease-out select-none
+        hover:-translate-y-0.5 active:translate-y-0
+        ${isDragging ? "opacity-50 rotate-2 scale-105 shadow-xl !translate-y-0" : ""}
       `}
       onClick={() => onOpen(card)}
     >
@@ -79,7 +80,7 @@ export function CardItem({ card, onOpen }: CardItemProps) {
         )}
 
         {/* Title */}
-        <p className="text-sm text-[#172b4d] font-medium leading-snug pr-5">{card.title}</p>
+        <p className="text-[14px] text-[#172b4d] font-medium leading-snug pr-5 tracking-tight">{card.title}</p>
 
         {/* Badges row */}
         <div className="flex flex-wrap items-center gap-2 mt-2">

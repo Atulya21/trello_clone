@@ -250,7 +250,7 @@ export function BoardCanvas({
         onDragEnd={onDragEnd}
       >
         <div className="flex-1 overflow-x-auto overflow-y-hidden">
-          <div className="flex gap-3 p-4 h-full items-start">
+          <div className="flex gap-2 px-3 py-3 sm:px-4 sm:py-4 h-full items-start">
             <SortableContext
               items={localLists.map((l) => l.id)}
               strategy={horizontalListSortingStrategy}
@@ -282,12 +282,18 @@ export function BoardCanvas({
               />
             ) : (
               <button
+                type="button"
                 onClick={() => setAddingList(true)}
-                className="flex items-center gap-2 px-3 py-2.5 bg-white/20 hover:bg-white/30 text-white
-                  rounded-xl text-sm font-medium transition-colors w-[272px] shrink-0 backdrop-blur-sm"
+                className="group flex items-center gap-2 w-[272px] shrink-0 min-h-[44px] px-3 py-3 rounded-xl
+                  text-left text-[15px] font-normal text-white
+                  bg-white/20 hover:bg-white/30 border border-white/20 hover:border-white/35
+                  shadow-sm shadow-black/10 backdrop-blur-sm
+                  transition-all duration-200 ease-out
+                  hover:-translate-y-px hover:shadow-md hover:shadow-black/15
+                  active:translate-y-0 active:bg-white/28"
               >
-                <PlusIcon className="w-4 h-4" />
-                Add another list
+                <PlusIcon className="w-4 h-4 shrink-0 opacity-90 transition-transform duration-200 group-hover:scale-105" />
+                <span className="leading-snug">Add another list</span>
               </button>
             )}
           </div>

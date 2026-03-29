@@ -54,8 +54,9 @@ export function ListColumn({
     <div
       ref={setSortableRef}
       style={style}
-      className={`flex flex-col w-[272px] shrink-0 rounded-xl bg-[#f1f2f4] shadow-list
-        ${isDragging ? "opacity-50 rotate-1 scale-105" : ""}
+      className={`flex flex-col w-[272px] shrink-0 rounded-xl bg-[#ebecf0] shadow-list
+        transition-shadow duration-200 ease-out
+        ${isDragging ? "opacity-50 rotate-1 scale-105 shadow-lg" : ""}
       `}
     >
       {/* Drag handle on header */}
@@ -71,7 +72,7 @@ export function ListColumn({
       {/* Cards */}
       <div
         ref={setDropRef}
-        className="flex-1 px-2 pb-2 space-y-2 min-h-[4px] overflow-y-auto max-h-[calc(100vh-220px)]"
+        className="flex-1 px-2 pb-2 space-y-2 min-h-[4px] overflow-y-auto max-h-[calc(100vh-220px)] [scrollbar-gutter:stable]"
       >
         <SortableContext
           items={filteredCards.map((c) => c.id)}
@@ -89,9 +90,10 @@ export function ListColumn({
           <AddCardForm onAdd={handleAddCard} onCancel={() => setAddingCard(false)} />
         ) : (
           <button
+            type="button"
             onClick={() => setAddingCard(true)}
-            className="w-full flex items-center gap-1.5 px-2 py-1.5 rounded-lg text-sm text-[#44546f]
-              hover:bg-[#091e4221] transition-colors text-left"
+            className="w-full flex items-center gap-1.5 px-2 py-2 rounded-lg text-sm font-medium text-[#44546f]
+              hover:bg-[#091e4221] transition-colors duration-200 ease-out text-left"
           >
             <PlusIcon className="w-4 h-4" />
             Add a card

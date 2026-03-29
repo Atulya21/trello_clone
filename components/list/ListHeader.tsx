@@ -36,7 +36,7 @@ export function ListHeader({ title, cardCount, onRename, onDelete }: ListHeaderP
   };
 
   return (
-    <div className="flex items-center justify-between px-3 pt-2.5 pb-1.5 gap-1">
+    <div className="flex items-start justify-between px-3 pt-3 pb-2 gap-1">
       {editing ? (
         <input
           ref={inputRef}
@@ -51,11 +51,11 @@ export function ListHeader({ title, cardCount, onRename, onDelete }: ListHeaderP
         />
       ) : (
         <h3
-          className="flex-1 text-sm font-semibold text-[#172b4d] cursor-pointer select-none leading-tight"
+          className="flex-1 min-w-0 text-sm font-semibold text-[#172b4d] cursor-pointer select-none leading-snug tracking-tight"
           onClick={() => setEditing(true)}
         >
           {title}
-          <span className="ml-1.5 text-[#6b778c] font-normal">{cardCount}</span>
+          <span className="ml-1.5 text-[#6b778c] font-semibold tabular-nums">{cardCount}</span>
         </h3>
       )}
 
